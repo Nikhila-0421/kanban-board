@@ -1,22 +1,26 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: [
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
-      },
-    },
-  },
-  plugins: [],
+	darkMode: "class",
+	content: [
+		"./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}",
+		"./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
+	],
+	theme: {
+		extend: {
+			fontFamily: {
+				sans: [
+					'"Inter"',
+					"ui-sans-serif",
+					"system-ui",
+					"sans-serif",
+					'"Apple Color Emoji"',
+					'"Segoe UI Emoji"',
+					'"Segoe UI Symbol"',
+					'"Noto Color Emoji"',
+				],
+			},
+		},
+	},
+	presets: [require("@medusajs/ui-preset")],
 } satisfies Config;
